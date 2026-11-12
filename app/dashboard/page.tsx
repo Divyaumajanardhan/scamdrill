@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-
+   import SignOutButton from "@/components/SignOutButton";
 export default function DashboardPage() {
   return (
     <main className="min-h-screen bg-slate-50 px-4 py-10">
@@ -37,7 +37,10 @@ async function Dashboard() {
 
   return (
     <>
-      <h1 className="text-2xl font-bold text-slate-900">Your results</h1>
+               <div className="flex items-center justify-between">
+           <h1 className="text-2xl font-bold text-slate-900">Your results</h1>
+           <SignOutButton />
+         </div>
       <p className="mt-1 text-sm text-slate-600">Signed in as {user.email}</p>
 
       <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
